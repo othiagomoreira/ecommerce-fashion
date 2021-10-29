@@ -1,135 +1,287 @@
 /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 3rem;
-  --font-semi: 600;
-  --font-bold: 700;
+    --header-height: 3rem;
+    --font-semi: 600;
+    --font-bold: 700;
 }
 
-/*===== Colores =====*/
+/*===== Colors =====*/
 :root {
-  --second-color: #E55947;
-  --second-color-alt: #D2321E;
-  --white-color: #FAFAFF;
-  --dark-color: #101010;
-  --dark-color-light: #606060;
-  --gray-color: #F0F1F3;
+    --second-color: #e55947;
+    --second-color-alt: #d2321e;
+    --white-color: #fafaff;
+    --dark-color: #101010;
+    --dark-color-light: #606060;
+    --gray-color: #f0f1f3;
 }
 
-/*===== Fuente y tipografia =====*/
+/*===== Source and typography =====*/
 :root {
-  --body-font: 'Open Sans', sans-serif;
-  --big-font-size: 3rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .75rem;
+    --body-font: 'Open Sans', sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.75rem;
 }
 
 @media screen and (min-width: 1024px) {
-  :root {
-    --big-font-size: 6rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .813rem;
-  }
+    :root {
+        --big-font-size: 6rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.813rem;
+    }
 }
 
-/*===== Margenes =====*/
+/*===== Margins =====*/
 :root {
-  --mb-1: 0.5rem;
-  --mb-2: 1rem;
-  --mb-3: 1.5rem;
-  --mb-4: 2rem;
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
 }
 
 /*===== z index =====*/
 :root {
-  --z-tooltip: 10;
-  --z-fixed: 100;
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
 /*===== BASE =====*/
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  color: var(--dark-color);
-  line-height: 1.6;
-}
-
-h1, h2, p {
-  margin: 0;
+    margin-top: var(--header-height);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: var(--dark-color);
+    text-decoration: none;
+    color: var(--dark-color);
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 /*===== CLASS CSS ===== */
+.section {
+    padding: 3rem 0;
+}
 
+.section-title {
+    font-size: var(--h2-font-size);
+    color: var(--dark-color);
+    margin: var(--mb-4) 0 var(--mb-1);
+    text-align: center;
+}
+
+.section-all {
+    display: block;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi);
+    color: var(--dark-color-light);
+    text-align: center;
+    margin-bottom: var(--mb-2);
+}
 
 /*===== LAYOUT =====*/
+.bd-grid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin: auto;
+}
 
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--gray-color);
+}
 
 /*===== NAV =====*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: absolute;
+        top: var(--header-height);
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        padding: 2rem;
+        background-color: var(--white-color);
+        transition: all ease 0.5s;
+    }
+}
 
+.nav__item {
+    margin-bottom: var(--mb-4);
+}
+
+.nav__link {
+    color: var(--dark-color);
+    font-weight: var(--font-semi);
+}
+
+.nav__link:hover {
+    color: var(--second-color);
+}
+
+.nav__logo {
+    font-weight: var(--font-semi);
+}
+
+.nav__cart {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.nav__toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
 /*=== Show menu ===*/
+.show {
+    right: 0;
+}
 
+.active {
+    color: var(--second-color-alt);
+}
 
 /*===== HOME =====*/
+.home {
+    background-color: var(--gray-color);
+}
 
+.home__container {
+    height: calc(100vh - var(--header-height));
+}
+
+.home__data {
+    padding-top: 6rem;
+}
+
+.home__title {
+    align-self: center;
+    font-size: var(--big-font-size);
+    line-height: 1;
+    letter-spacing: 0.5rem;
+    margin-bottom: 4rem;
+}
+
+.home__title span {
+    font-size: var(--h1-font-size);
+}
+
+.home__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 260px;
+}
 
 /*BUTTONS*/
+.btn {
+    display: inline-block;
+    background-color: var(--second-color);
+    color: var(--white-color);
+    padding: 1rem;
+    font-weight: var(--font-semi);
+    transition: all ease 0.3s;
+}
 
+.btn:hover {
+    background-color: var(--second-color-alt);
+}
 
 /*===== COLLECTION =====*/
+.collection__container {
+    row-gap: 2rem;
+}
 
+.collection__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--gray-color);
+    transition: all ease 0.3s;
+}
 
+/* Efeito de que está subindo e decendo */
+.collection__box:hover {
+    transform: translateY(-0.5rem);
+}
+
+.collection__img {
+    width: 100px;
+}
+
+.collection__title {
+    font-size: var(--h1-font-size);
+    line-height: 1.2;
+    margin-bottom: var(--mb-2);
+    text-transform: uppercase;
+    font-weight: var(--font-semi);
+}
+
+.collection__subtitle {
+    display: block;
+    font-size: var(--h2-font-size);
+    color: var(--dark-color-light);
+}
+
+.collection__view {
+    font-size: var(--small-font-size);
+    color: var(--dark-color-light);
+}
+
+.collection__view:hover {
+    text-decoration: underline;
+}
 /*===== FEATURED PRODUCTS =====*/
-
 
 /*===== OFFER =====*/
 
-
 /*===== NEW ARRIVALS =====*/
-
 
 /*===== NEWSLETTER =====*/
 
-
 /*===== SPONSORS =====*/
-
 
 /*===== FOOTER =====*/
 
-
 /* ===== MEDIA QUERIES=====*/
-
-
