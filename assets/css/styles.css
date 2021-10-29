@@ -431,7 +431,7 @@ img {
     margin-bottom: var(--mb-2);
 }
 
-.footer__store {
+.footer__store img {
     width: 100px;
 }
 
@@ -511,7 +511,35 @@ img {
         width: 130px;
     }
 
-    .featured__container {
+    .featured__container,
+    .sponsors__container,
+    .footer__container {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .offer__data {
+        padding: 5rem 0;
+    }
+
+    .new__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .newsletter__form {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .footer__container {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home__data {
+        padding-left: 7rem;
+    }
+    .home__image {
+        right: 15%;
     }
 }
