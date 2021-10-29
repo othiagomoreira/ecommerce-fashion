@@ -337,6 +337,35 @@ img {
 }
 
 /*===== NEW ARRIVALS =====*/
+.new__container {
+    row-gap: 2rem;
+}
+
+.new__box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--gray-color);
+    overflow: hidden;
+}
+
+.new__box:hover .new__link {
+    bottom: 0;
+}
+
+.new__link {
+    /* Efeito de subir e prencher o produto */
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(229, 89, 71, 0.2);
+    transition: all ease 0.3s;
+}
 
 /*===== NEWSLETTER =====*/
 
